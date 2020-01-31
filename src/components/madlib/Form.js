@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Form = ({ onSubmit, onChange }) => (
+const Form = ({ onSubmit, onChange, onClick }) => (
   <>
     <form onSubmit={onSubmit}>
       <input type="text" name="1" placeholder="adjective" onChange={onChange} />
@@ -17,6 +17,7 @@ const Form = ({ onSubmit, onChange }) => (
       <input type="text" name="11" placeholder="verb, past tense" onChange={onChange} />
       <input type="text" name="12" placeholder="adjective" onChange={onChange} />
       <button>Create Madlib</button>
+      <button onClick={onClick}>Clear Inputs</button>
     </form>
   </>
 );
@@ -24,6 +25,7 @@ const Form = ({ onSubmit, onChange }) => (
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Form;

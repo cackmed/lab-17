@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { zoo } from '../../services/madlib';
+import styles from './Result.css';
 
 const Result = ({ words, closeResult }) => (
   <>
-    <p>{zoo(...words)}</p>
+    <p className={styles.Result}>{zoo(...words)}</p>
     <button onClick={closeResult}>X</button>
   </>
 );

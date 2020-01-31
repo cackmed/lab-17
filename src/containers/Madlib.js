@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../components/madlib/Form';
 import Result from '../components/madlib/Result';
-import Button from '../components/madlib/Button';
 
 export default class Madlib extends Component{
   state = {
@@ -24,6 +23,7 @@ export default class Madlib extends Component{
   clearInput = event => {
     event.preventDefault();
     this.setState({
+      showResult: false,
       1: '',
       2: '',
       3: '',
@@ -36,6 +36,7 @@ export default class Madlib extends Component{
       10: '',
       11: '',
       12: '',
+      words: []
     });
     console.log(this.state);
   }
@@ -61,9 +62,8 @@ export default class Madlib extends Component{
     const { showResult, words } = this.state;
     return (
       <>
-        {!showResult && <Form onSubmit={this.handleSubmit} onChange={this.handleChange} />}
+        {!showResult && <Form onSubmit={this.handleSubmit} onChange={this.handleChange} onClick={this.clearInput} />}
         {showResult && <Result words={words} closeResult={this.toggleResult} />}
-        <Button clear={this.clearInput}/>
       </>
     );
   }
