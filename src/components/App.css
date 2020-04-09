@@ -1,0 +1,14 @@
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:slategray;
+    color: whitesmoke;
+}
+.Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: slategray;
+    color: whitesmoke;
+}
